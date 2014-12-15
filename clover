@@ -1,0 +1,42 @@
+http://www.tonymacx86.com/yosemite-laptop-support/144351-guide-dell-xps-9530-a.html
+
+<dict>
+    <key>Comment</key>
+    <string>Enable USB3 after wake for Intel 8 series chipset</string>
+    <key>Find</key>
+    <data>
+    xoDIAAAAAQ==
+    </data>
+    <key>Name</key>
+    <string>AppleUSBXHCI</string>
+    <key>Replace</key>
+    <data>
+    xoDIAAAAAA==
+    </data>
+</dict>
+//After applying the patch and removing GenericUSBXHCI, shutdown the laptop fully instead of restarting.
+  and remove flag .
+  
+//Changing settings in your bios definitely changes your SSDT/DSDT.
+
+<dict>
+    <key>Comment</key>
+    <string>Enable 96MB for Azul framebuffer 0x0a2e0008</string>
+    <key>Find</key>
+    <data>
+    CAAuCgEDAwMAAAAEAAAgAgAAUAEAAABgbAUAAGwFAAAA
+    AAAAAAAAAAAACAACAAAAMAAAAAEFCQAABAAABwEAAAIE
+    CgAABAAABwEAAA==
+    </data>
+    <key>Name</key>
+    <string>AppleIntelFramebufferAzul</string>
+    <key>Replace</key>
+    <data>
+    CAAuCgEDAwMAAAAGAAAgAgAAUAEAAABgbAUAAGwFAAAA
+    AAAAAAAAAAAACAAEAAAAMAAAAAEFCQAACAAABgAAAAIE
+    CgAABAAAhwAAAA==
+    </data>
+</dict>
+
+    <key>ig-platform-id</key>
+    <string>0x0a2e0008</string>
